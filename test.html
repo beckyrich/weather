@@ -62,7 +62,7 @@
             
             const url = "https://api.openweathermap.org/data/2.5/weather?zip=37027&appid=c905802420952c6b47b9501665721300&units=imperial"
 
-            /* used a promise to call the url and then handle the errors. I'm not as comfortable with async/await yet. I did try a few times and was unsuccessful. This was the cleanest way to call the data and handle the errrors */
+            /* used a promise to call the url and then handle the errors. I'm not as comfortable with async/await yet. I did try a few times and was unsuccessful. This was the cleanest way to call the data and handle the errrors. I am continuing to read documentation on how to use async/await more effeciently since I know it tends to be preferred over promises */
             axios.get(url)
             .catch(this.setError)
             .then(this.setResults);
@@ -91,6 +91,7 @@
 <body>
     <div class="container">
         <div class="header">
+            <!-- I wanted to get the current weather icon from the api, but still figuring out how to make this happen to add to a header -->
             <div class="icon-container">
                 <canvas id="icon" width="100" height="100"></canvas>
             </div>
