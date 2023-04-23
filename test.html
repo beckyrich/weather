@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles.css">
-
     <title>FreightWise Programming Test</title>
     <script>
         'use strict';
@@ -59,10 +58,11 @@
             // Make the API call and handle the results through axios docs. 
             // Created a variable to pass through the axios call.
             // Googled lat & long for Brentwood, then changed api call to zip code and added imperial units at end for Farenheit
-            // API Key provided received a 401 error, after several attempts I created my own key
+            // API Key provided in the instructions had a 401 error, after several attempts I created my own key
             
             const url = "https://api.openweathermap.org/data/2.5/weather?zip=37027&appid=c905802420952c6b47b9501665721300&units=imperial"
 
+            /* used a promise to call the url and then handle the errors. I'm not as comfortable with async/await yet. I did try a few times and was unsuccessful. This was the cleanest way to call the data and handle the errrors */
             axios.get(url)
             .catch(this.setError)
             .then(this.setResults);
@@ -74,73 +74,17 @@
         }
 
         setResults(response) {
-          // TODO: Format the error
+          /* Used getElementById and innerText/innerHTML to populate the city name and temperature and manipulate the DOM.
+          This was the way I could populate this quickly when the data was called through axios. I left the original line of code below that I changed*/ 
           // this.testResults.innerHTML = (message || '').toString();
-          console.log(response.data);
+          console.log(response);
           document.getElementById("city").innerText = `${response.data.name}`;
-          document.getElementById("temperature").innerText = `Current Temperature: ${Math.floor(response.data.main.temp)}°F`;
+          document.getElementById("temperature").innerHTML = `<h3>Current Temperature:</h3> <span class="temp">${Math.floor(response.data.main.temp)}°F</span>`;
         }
     }
     </script>
 
-    <style>
-    *, *::before, *::after {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background: linear-gradient(to right, aquamarine, rgb(207, 115, 230), rgb(163, 96, 163));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 90%;
-    width: 1200px;
-    background-color: white;
-    box-shadow: 0 5px 10px black;
-    border-radius: 5px;
-}
-
-.content {
-    padding: 40px;
-    margin-top: 50px;
-}
-
-.button-container {
-    text-align: center;
-}
-
-.button-container > button {
-    margin: 0;
-    padding: 10px 18px;
-    color: white;
-    background-color: #008000;
-    border: none;
-    border-radius: 3px;
-    transition: all 200ms ease-in-out;
-    font-size: 14px;
-    /* Adding Styling */
-    display: flex;
-}
-
-.button-container > button:hover {
-    background-color: #00A000;
-    /* Adding more styling */
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.button-container > button:active {
-    background-color: #006000;
-}
-
-</style>
+<!-- Moved CSS to its own file to help clear the clutter and make more readable -->
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
