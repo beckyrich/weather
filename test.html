@@ -63,11 +63,12 @@
             .then(function (response) {
                 // handle success & add city & temperature to the DOM
                 document.getElementById("city").innerText = `${response.data.name}`;
-                document.getElementById("message").innerText = `Current Temperature: ${response.data.main.temp}°F`;
+                document.getElementById("temperature").innerText = `Current Temperature: ${Math.floor(response.data.main.temp)}°F`;
                 console.log(response);
             })
             .catch(function (error) {
                 // handle error
+                document.getElementById("temperature").innerText = error;
                 console.log(error);
             })
             .finally(function () {
@@ -89,11 +90,13 @@
     </script>
 
     <style>
+        /* Adding styling */
         *, *::before, *::after {
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
 
+        /* Adding styling */
         body {
             background: linear-gradient(to right, aquamarine, rgb(207, 115, 230), rgb(163, 96, 163));
             display: flex;
@@ -158,10 +161,10 @@
         <div class="content">
             <div class="general-info">
                 <h2 id="city"></h2>
-                <div id="message"></div>
+                <div id="temperature"></div>
             </div>
-            <div class="test-results"></div>
-            <div class="button-container"></div>
+                <div class="test-results"></div>
+                <div class="button-container"></div>
         </div>
     </div>
 
