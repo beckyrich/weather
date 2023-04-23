@@ -89,13 +89,32 @@
     </script>
 
     <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
         body {
             background: linear-gradient(to right, aquamarine, rgb(207, 115, 230), rgb(163, 96, 163));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 90%;
+            width: 1200px;
+            background-color: white;
+            box-shadow: 0 5px 10px black;
+            border-radius: 5px;
         }
 
         .content {
-            display: flex;
-            justify-content: center;
+            padding: 40px;
+            margin-top: 50px;
         }
 
         .button-container {
