@@ -50,6 +50,7 @@ class Test {
     // Created a variable to pass through the axios call.
     // Googled lat & long for Brentwood, then changed api call to zip code and added imperial units at end for Farenheit
     // API Key provided in the instructions had a 401 error, after several attempts I created my own key
+    // Latest update: original API now works and has been put into the code
 
     const url =
       "https://api.openweathermap.org/data/2.5/weather?zip=37027&appid=25e989bd41e3e24ce13173d8126e0fd6&units=imperial";

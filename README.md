@@ -10,6 +10,7 @@ This is a weather app designed to demonstrate API called, manipulating the DOM, 
 - Styling still needs to be formatted/aligned more effeciently
 
 * Started researching adding a satellite view through Google Maps API to the weather app
+* I would also create an .env file to make the API private as a best practice.
 
 ## Resources
 
@@ -17,6 +18,8 @@ This is a weather app designed to demonstrate API called, manipulating the DOM, 
 - CSS Tricks- for some styling ideas and a refresher of Flexbox
 - Axios Documentation through Github
 - OpenWeather API Documentation
+
+* Google Maps API Documentation (for future features)
 
 ## Seeing the Site Live
 
