@@ -1,4 +1,4 @@
-
+/* Moved CSS to single file for better management and readability */
 *, *::before, *::after {
 box-sizing: border-box;
 font-family: Arial, sans-serif;
@@ -25,6 +25,15 @@ border-radius: 5px;
 .content {
 padding: 40px;
 margin-top: 50px;
+}
+
+.header {
+    background-color: #77e5f6;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
 }
 
 .temp {
