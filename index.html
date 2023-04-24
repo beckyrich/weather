@@ -70,6 +70,9 @@
 
         setError(error) {
           console.log(error);
+        /* unable to currently get this to display to DOM. It is successfully showing in the console.
+        The way I tested this was by taking away the API key when running this locally. 
+        Still researching answer of how to get this to display correctly  */
           this.testResults.innerHtml = `<p class="error">An error has occurred: ${error}</p>`;
         }
 
