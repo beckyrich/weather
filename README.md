@@ -9,6 +9,8 @@ This is a weather app designed to demonstrate API called, manipulating the DOM, 
 - Instead of traditional CSS, I would implement TailwindCSS or Bootstrap
 - Styling still needs to be formatted/aligned more effeciently
 
+* Started researching adding a satellite view through Google Maps API to the weather app
+
 ## Resources
 
 - Stack Overflow- for researching async/await and promises while figuring out error handling
@@ -16,4 +18,6 @@ This is a weather app designed to demonstrate API called, manipulating the DOM, 
 - Axios Documentation through Github
 - OpenWeather API Documentation
 
-## Seeing the Code Live
+## Seeing the Site Live
+
+https://beckyrich.github.io/weather/
