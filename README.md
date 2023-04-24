@@ -5,7 +5,6 @@ This is a weather app designed to demonstrate API called, manipulating the DOM, 
 ## Thoughts After Project
 
 - Going back later, when time permits, I would break the sections down into smaller components. This would make it more manageable and scalable.
-- I would love to get the icon to work and sync with the current weather
 - Instead of traditional CSS, I would implement TailwindCSS or Bootstrap
 - Styling still needs to be formatted/aligned more effeciently
 

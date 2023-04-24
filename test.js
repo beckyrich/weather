@@ -70,6 +70,7 @@ class Test {
     This was the way I could populate this quickly when the data was called through axios. I left the original line of code below that I changed*/
     // this.testResults.innerHTML = (message || '').toString();
     console.log(response);
+    document.querySelector(".weather-icon img").src = `icons/${response.data.weather[0].icon}.png`;
     document.getElementById("city").innerText = `${response.data.name}`;
     document.getElementById(
       "temperature"
