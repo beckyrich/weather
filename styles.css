@@ -5,14 +5,16 @@ font-family: Arial, sans-serif;
 }
 
 body {
-background: linear-gradient(to right, aquamarine, rgb(207, 115, 230), rgb(163, 96, 163));
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-margin: 0;
-padding: 0;
-}
+    background-image: url(img/sky.jpg);
+    /* adding background-color in case image does not load, so background is not just white */
+    background-color: rgb(106, 106, 193);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    }
 
 .container {
 max-width: 90%;
@@ -28,7 +30,7 @@ margin-top: 50px;
 }
 
 .header {
-    background-color: #77e5f6;
+    background-color: #80d4e1;
 }
 
 .temp {
