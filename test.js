@@ -1,5 +1,4 @@
-
-'use strict';
+"use strict";
 /**
  * Software Developer test.
  *
@@ -40,40 +39,43 @@
  * - Request a user's phone number and send them an SMS with the weather.
  */
 class Test {
-    constructor() {
-        this.testResults = document.getElementsByClassName('test-results');
-    }
+  constructor() {
+    this.testResults = document.getElementsByClassName("test-results");
+  }
 
-    async run() {
-        console.log(new Date().toISOString(), '[Test]', 'Running the test');
+  async run() {
+    console.log(new Date().toISOString(), "[Test]", "Running the test");
 
-    // Make the API call and handle the results through axios docs. 
+    // Make the API call and handle the results through axios docs.
     // Created a variable to pass through the axios call.
     // Googled lat & long for Brentwood, then changed api call to zip code and added imperial units at end for Farenheit
     // API Key provided in the instructions had a 401 error, after several attempts I created my own key
-    
-    const url = "https://api.openweathermap.org/data/2.5/weather?zip=37027&appid=c905802420952c6b47b9501665721300&units=imperial"
+
+    const url =
+      "https://api.openweathermap.org/data/2.5/weather?zip=37027&appid=c905802420952c6b47b9501665721300&units=imperial";
 
     /* used a promise to call the url and then handle the errors. I'm not as comfortable with async/await yet. I did try a few times and was unsuccessful. This was the cleanest way to call the data and handle the errrors. I am continuing to read documentation on how to use async/await more effeciently since I know it tends to be preferred over promises */
-    axios.get(url)
-    .catch(this.setError)
-    .then(this.setResults);
-}
+    axios.get(url).catch(this.setError).then(this.setResults);
+  }
 
-setError(error) {
-  console.log(error);
-/* unable to currently get this to display to DOM. It is successfully showing in the console.
-The way I tested this was by taking away the API key when running this locally. 
-Still researching answer of how to get this to display correctly  */
-  this.testResults.innerHtml = `<p class="error">An error has occurred: ${error}</p>`;
-}
+  setError(error) {
+    console.log(error);
+    /* unable to currently get this to display to DOM. It is successfully showing in the console.
+    The way I tested this was by taking away the API key when running this locally. 
+    Still researching answer of how to get this to display correctly  */
+    this.testResults.innerHtml = `<p class="error">An error has occurred: ${error}</p>`;
+  }
 
-setResults(response) {
-  /* Used getElementById and innerText/innerHTML to populate the city name and temperature and manipulate the DOM.
-  This was the way I could populate this quickly when the data was called through axios. I left the original line of code below that I changed*/ 
-  // this.testResults.innerHTML = (message || '').toString();
-  console.log(response);
-  document.getElementById("city").innerText = `${response.data.name}`;
-  document.getElementById("temperature").innerHTML = `<h3>Current Temperature:</h3> <span class="temp">${Math.floor(response.data.main.temp)}°F</span>`;
-}
+  setResults(response) {
+    /* Used getElementById and innerText/innerHTML to populate the city name and temperature and manipulate the DOM.
+    This was the way I could populate this quickly when the data was called through axios. I left the original line of code below that I changed*/
+    // this.testResults.innerHTML = (message || '').toString();
+    console.log(response);
+    document.getElementById("city").innerText = `${response.data.name}`;
+    document.getElementById(
+      "temperature"
+    ).innerHTML = `<h3>Current Temperature:</h3> <span class="temp">${Math.floor(
+      response.data.main.temp
+    )}°F</span>`;
+  }
 }

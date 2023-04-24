@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="styles.css">
-    
-    <title>FreightWise Programming Test</title>
- <!-- script in header moved to its own file test.js and called above the script tag below -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="styles.css" />
 
-<!-- Moved CSS to its own file to help clear the clutter and make more readable -->
+    <title>FreightWise Programming Test</title>
+    <!-- script in header moved to its own file test.js and called above the script tag below -->
+
+    <!-- Moved CSS to its own file to help clear the clutter and make more readable -->
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <!-- I wanted to get the current weather icon from the api, but still figuring out how to make this happen to add to a header -->
-            <div class="icon-container">
-                <div class="weather-icon"><img src="icons/unknown.png"/></div>
-            </div>
+      <div class="header">
+        <!-- I wanted to get the current weather icon from the api, but still figuring out how to make this happen to add to a header -->
+        <div class="icon-container">
+          <div class="weather-icon"><img src="icons/unknown.png" /></div>
         </div>
-        <div class="content">
-            <div class="general-info">
-                <h2 id="city"></h2>
-                <div id="temperature"></div>
-            </div>
-                <div class="test-results"></div>
-                <div class="button-container"></div>
+      </div>
+      <div class="content">
+        <div class="general-info">
+          <h2 id="city"></h2>
+          <div id="temperature"></div>
         </div>
+        <div class="test-results"></div>
+        <div class="button-container"></div>
+      </div>
     </div>
 
     <script type="text/javascript" src="test.js"></script>
     <script>
-        'use strict';
+      "use strict";
 
-        /**
-         * Creates a button for kicking off the test and adds it to the DOM.
-         *
-         * @param {HTMLElement} context  the parent element to add the button to
-         * @param {Test}        test     the test to be executed
-         * @returns {HTMLElement} the button added to the test
-         */
-        function addButtonForTest(context, test) {
-            let testButton = document.createElement('button');
+      /**
+       * Creates a button for kicking off the test and adds it to the DOM.
+       *
+       * @param {HTMLElement} context  the parent element to add the button to
+       * @param {Test}        test     the test to be executed
+       * @returns {HTMLElement} the button added to the test
+       */
+      function addButtonForTest(context, test) {
+        let testButton = document.createElement("button");
 
-            testButton.type = 'button';
-            testButton.innerText = 'Get the Nashville Weather';
-            testButton.onclick = () => test.run();
+        testButton.type = "button";
+        testButton.innerText = "Get the Nashville Weather";
+        testButton.onclick = () => test.run();
 
-            context.appendChild(testButton);
+        context.appendChild(testButton);
 
-            return testButton;
-        }
+        return testButton;
+      }
 
-        // Create the Test and add a button to the UI for running the test
-        const test = new Test();
-        const buttonContainer = document.getElementsByClassName('button-container')[0];
+      // Create the Test and add a button to the UI for running the test
+      const test = new Test();
+      const buttonContainer =
+        document.getElementsByClassName("button-container")[0];
 
-        addButtonForTest(buttonContainer, test);
+      addButtonForTest(buttonContainer, test);
     </script>
-</body>
+  </body>
 </html>
