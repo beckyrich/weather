@@ -52,7 +52,7 @@ class Test {
     // API Key provided in the instructions had a 401 error, after several attempts I created my own key
 
     const url =
-      "https://api.openweathermap.org/data/2.5/weather?zip=37027&appid=c905802420952c6b47b9501665721300&units=imperial";
+      "https://api.openweathermap.org/data/2.5/weather?zip=37027&appid=25e989bd41e3e24ce13173d8126e0fd6&units=imperial";
 
     /* used a promise to call the url and then handle the errors. I'm not as comfortable with async/await yet. I did try a few times and was unsuccessful. This was the cleanest way to call the data and handle the errrors. I am continuing to read documentation on how to use async/await more effeciently since I know it tends to be preferred over promises */
     axios.get(url).catch(this.setError).then(this.setResults);
